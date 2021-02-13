@@ -1,3 +1,3 @@
 export abstract class Transform {
-  makeEdit: (editor: TextEditor) => TextEditorEdit
+  abstract makeEdit(editor: TextEditor): TextEdit
 }
