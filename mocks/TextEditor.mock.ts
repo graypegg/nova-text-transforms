@@ -3,15 +3,20 @@ import { MockRange } from './Range.mock'
 import { MockTextDocument } from './TextDocument.mock'
 
 export class MockTextEditor implements TextEditor {
+  public selectedRange: Range
+  public selectedRanges: Range[]
+
   constructor (
     public document: TextDocument = new MockTextDocument(),
-    public selectedRange: Range = new MockRange(),
-    public selectedRanges: Range[] = [new MockRange()],
+    selectedRanges?: Range[],
     public selectedText: string = 'a',
     public softTabs: boolean = true,
     public tabLength: number = 2,
     public tabText: string = ' '
-  ) { }
+  ) {
+    this.selectedRanges = selectedRanges ?? [new MockRange(0, document.length)]
+    this.selectedRange = this.selectedRanges?.[0]
+  }
 
   edit = jest.fn(() => new Promise<void>(res => res()))
   insert = jest.fn(() => new Promise<void>(res => res()))
