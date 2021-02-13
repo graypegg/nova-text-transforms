@@ -1,0 +1,18 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : "npm run build"
+    },
+    "clean" : {
+      "enabled" : true,
+      "script" : "rm -Rf .\/dist"
+    },
+    "run" : {
+      "enabled" : true,
+      "script" : "npm run start"
+    }
+  },
+  "identifier" : "EAA4C422-8DD1-4E88-9499-CBF2702E3EB6",
+  "openLogOnRun" : "fail"
+}
