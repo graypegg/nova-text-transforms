@@ -1,0 +1,40 @@
+{
+    "identifier": "graypegg.TextTransforms",
+    "name": "TextTransforms",
+    "organization": "Gray Pegg",
+    "description": "Lorem ipsum, dolor sit amet.",
+    "version": "1.0",
+    "categories": ["commands"],
+    
+    "main": "main.js",
+    
+    "activationEvents": [
+        "onLanguage:html"
+    ],
+    
+    "entitlements": {
+        
+    },
+    
+    "commands": {
+        "extensions": [
+            {
+                "title": "Open URL",
+                "command": "texttransforms.openURL"
+            },
+            {
+                "title": "Run External Tool",
+                "command": "texttransforms.runExternalTool"
+            }
+        ]
+    },
+    
+    "config": [
+        {
+            "key": "texttransforms.foobar",
+            "title": "Foo the bar",
+            "type": "boolean",
+            "default": false
+        }
+    ]
+}
