@@ -6,7 +6,7 @@
     "version": "1.0",
     "categories": ["commands"],
     
-    "main": "dist/main.js",
+    "main": "main.js",
     
     "activationEvents": [
         "onLanguage:html"
@@ -19,12 +19,8 @@
     "commands": {
         "extensions": [
             {
-                "title": "Open URL",
-                "command": "texttransforms.openURL"
-            },
-            {
-                "title": "Run External Tool",
-                "command": "texttransforms.runExternalTool"
+                "title": "Transform to Snake Case",
+                "command": "texttransforms.snakecase"
             }
         ]
     },

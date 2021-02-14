@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  mode: process.env.NODE_ENV === 'dev' ? 'development' : 'production',
+  mode: 'production',
   entry: './src/main.ts',
   module: {
     rules: [
@@ -15,8 +15,11 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
+  optimization: {
+    minimize: false,
+  },
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'Scripts'),
   },
 };
