@@ -11,5 +11,3 @@ nova.commands.register("texttransforms.snakecase", (workspace: Workspace) => {
     workspace.activeTextEditor.edit((editor) => editor.replace(edit.range, edit.newText))
   })
 })
-
-exports.activate = () => console.log('activated')

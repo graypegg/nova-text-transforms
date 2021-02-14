@@ -63,7 +63,6 @@ nova.commands.register("texttransforms.snakecase", function (workspace) {
         workspace.activeTextEditor.edit(function (editor) { return editor.replace(edit.range, edit.newText); });
     });
 });
-exports.activate = function () { return console.log('activated'); };
 
 /******/ })()
 ;
