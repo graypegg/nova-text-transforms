@@ -9,7 +9,7 @@ export class SnakeCaseTransform extends Transform {
         SnakeCaseTransform.replaceSpacesWithUnderscores(
           SnakeCaseTransform.upperCase(
             SnakeCaseTransform.splitCamelCase(
-              text
+              SnakeCaseTransform.not(/[^\w\s]/g, text)
             )
           )
         )
@@ -18,7 +18,7 @@ export class SnakeCaseTransform extends Transform {
   }
   
   static splitCamelCase (string: string) {
-    return string.replace(/([a-z]+)(?=[A-Z])/g, '$1 ')
+    return string.replace(/([a-z0-9]+)(?=[A-Z])/g, '$1 ')
   }
   
   static upperCase (string: string) {
@@ -26,6 +26,10 @@ export class SnakeCaseTransform extends Transform {
   }
   
   static replaceSpacesWithUnderscores (string: string) {
-    return string.replace(/\s/g, '_')
+    return string.replace(/\s+/g, '_')
+  }
+  
+  static not (regex: RegExp, string: string) {
+    return string.replace(regex, '')
   }
 }
