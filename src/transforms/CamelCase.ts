@@ -8,7 +8,7 @@ export class CamelCaseTransform extends Transform {
       const text = editor.getTextInRange(range)
       return new TextEdit(
         range,
-        CamelCaseTransform.removeWhitespace(
+        CamelCaseTransform.removeSpaces(
           CamelCaseTransform.capitalizeAfterWhitespace(
             CamelCaseTransform.firstCharacterAlphaOnly(
               CamelCaseTransform.trim(
@@ -50,7 +50,7 @@ export class CamelCaseTransform extends Transform {
     }, '')
   }
 
-  static removeWhitespace (string: string) {
-    return string.replace(/\s/, '')
+  static removeSpaces (string: string) {
+    return string.replace(/\ /, '')
   }
 }

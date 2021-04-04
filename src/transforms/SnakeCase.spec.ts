@@ -29,6 +29,29 @@ describe('SnakeCase', () => {
       const edit = transform.makeEdit(editor)
       expect(edit[0].newText).toEqual('AILURUS_FULGENS')
     })
+    
+    test('convert from camel case in multiline selection', () => {
+      const editor = new MockTextEditor(
+        new MockTextDocument(
+`this is a normal line
+
+thisIsCamelCase
+
+
+this is theEnd`
+        )
+      )
+      
+      const edit = transform.makeEdit(editor)
+      expect(edit[0].newText).toEqual(
+`THIS_IS_A_NORMAL_LINE
+
+THIS_IS_CAMEL_CASE
+
+
+THIS_IS_THE_END`
+      )
+    })
   })
 
   describe('spaces', () => {

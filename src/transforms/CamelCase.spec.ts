@@ -65,5 +65,28 @@ describe('CamelCase', () => {
       const edit = transform.makeEdit(editor)
       expect(edit[0].newText).toEqual('ailurusFulgens')
     })
+
+    test('convert from snake case in multiline selection', () => {
+      const editor = new MockTextEditor(
+        new MockTextDocument(
+`this is a normal line
+
+THIS_IS_SNAKE_CASE
+
+
+this is the End`
+        )
+      )
+      
+      const edit = transform.makeEdit(editor)
+      expect(edit[0].newText).toEqual(
+`thisIsANormalLine
+
+thisIsSnakeCase
+
+
+thisIsTheEnd`
+      )
+    })
   })
 })

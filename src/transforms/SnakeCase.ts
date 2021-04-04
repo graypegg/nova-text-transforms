@@ -24,7 +24,7 @@ export class SnakeCaseTransform extends Transform {
   }
   
   static replaceSpacesWithUnderscores (string: string) {
-    return string.replace(/\s+/g, '_')
+    return string.replace(/\ +/g, '_')
   }
   
   static not (regex: RegExp, string: string) {
