@@ -1,17 +1,14 @@
 {
     "identifier": "graypegg.TextTransforms",
-    "name": "TextTransforms",
+    "name": "Text Transforms",
     "organization": "Gray Pegg",
-    "description": "Some basic text transformations for use in the Nova editor command pallete.",
+    "description": "Some basic text transformations for use in the Nova editor command palette.",
+    "repository": "https://github.com/graypegg/nova-text-transforms",
     "version": "1.0",
     "categories": ["commands"],
     
     "main": "main.js",
-    
-    "activationEvents": [
-        "onLanguage:html"
-    ],
-    
+
     "entitlements": {
         
     },
@@ -35,14 +32,5 @@
                 "command": "texttransforms.camelcase"
             }
         ]
-    },
-    
-    "config": [
-        {
-            "key": "texttransforms.foobar",
-            "title": "Foo the bar",
-            "type": "boolean",
-            "default": false
-        }
-    ]
+    }
 }

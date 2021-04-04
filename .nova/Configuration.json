@@ -1,4 +1,5 @@
 {
   "editor.default_syntax" : "typescript",
-  "workspace.color" : 2
+  "workspace.art_style" : 1,
+  "workspace.color" : 8
 }
