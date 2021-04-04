@@ -1,4 +1,5 @@
 import { Transform } from "../Transform";
+import { UppercaseTransform } from "./Uppercase";
 
 export class SnakeCaseTransform extends Transform {
   makeEdit (editor: TextEditor) {
@@ -7,7 +8,7 @@ export class SnakeCaseTransform extends Transform {
       return new TextEdit(
         range,
         SnakeCaseTransform.replaceSpacesWithUnderscores(
-          SnakeCaseTransform.upperCase(
+          UppercaseTransform.uppercase(
             SnakeCaseTransform.splitCamelCase(
               SnakeCaseTransform.not(/[^\w\s]/g, text)
             )
@@ -19,10 +20,6 @@ export class SnakeCaseTransform extends Transform {
   
   static splitCamelCase (string: string) {
     return string.replace(/([a-z0-9]+)(?=[A-Z])/g, '$1 ')
-  }
-  
-  static upperCase (string: string) {
-    return string.toLocaleUpperCase()
   }
   
   static replaceSpacesWithUnderscores (string: string) {
