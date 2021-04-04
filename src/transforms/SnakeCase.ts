@@ -2,6 +2,7 @@ import { Transform } from "../Transform";
 import { UppercaseTransform } from "./Uppercase";
 
 export class SnakeCaseTransform extends Transform {
+  command = 'texttransforms.snakecase'
   makeEdit (editor: TextEditor) {
     return editor.selectedRanges.map(range => {
       const text = editor.getTextInRange(range)

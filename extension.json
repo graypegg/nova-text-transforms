@@ -19,8 +19,16 @@
     "commands": {
         "extensions": [
             {
-                "title": "Transform to Snake Case",
+                "title": "Transform to SNAKE_CASE",
                 "command": "texttransforms.snakecase"
+            },
+            {
+                "title": "Transform to lowercase",
+                "command": "texttransforms.lowercase"
+            },
+            {
+                "title": "Transform to UPPERCASE",
+                "command": "texttransforms.uppercase"
             }
         ]
     },

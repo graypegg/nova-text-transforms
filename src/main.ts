@@ -1,11 +1,18 @@
+import { Transform } from "./Transform";
+import { LowercaseTransform } from "./transforms/Lowercase";
 import { SnakeCaseTransform } from "./transforms/SnakeCase";
+import { UppercaseTransform } from "./transforms/Uppercase";
 
-const transformers = {
-  snakecase: new SnakeCaseTransform()
-}
+const transformers: Transform[] = [
+  new SnakeCaseTransform(),
+  new UppercaseTransform(),
+  new LowercaseTransform()
+]
 
-nova.commands.register("texttransforms.snakecase", (workspace: Workspace) => {
-  transformers.snakecase.makeEdit(workspace.activeTextEditor).forEach(edit => {
-    workspace.activeTextEditor.edit((editor) => editor.replace(edit.range, edit.newText))
+transformers.forEach(transformer => {
+  nova.commands.register(transformer.command, (workspace: Workspace) => {
+    transformer.makeEdit(workspace.activeTextEditor).forEach(edit => {
+      workspace.activeTextEditor.edit((editor) => editor.replace(edit.range, edit.newText))
+    })
   })
 })
