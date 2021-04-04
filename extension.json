@@ -2,7 +2,7 @@
     "identifier": "graypegg.TextTransforms",
     "name": "TextTransforms",
     "organization": "Gray Pegg",
-    "description": "Lorem ipsum, dolor sit amet.",
+    "description": "Some basic text transformations for use in the Nova editor command pallete.",
     "version": "1.0",
     "categories": ["commands"],
     
@@ -29,6 +29,10 @@
             {
                 "title": "Transform to UPPERCASE",
                 "command": "texttransforms.uppercase"
+            },
+            {
+                "title": "Transform to camelCase",
+                "command": "texttransforms.camelcase"
             }
         ]
     },

@@ -19,14 +19,16 @@ describe('SnakeCase', () => {
     const edit = transform.makeEdit(editor)
     expect(edit[0].newText).toEqual('AILURUS')
   })
-
-  test('convert from camel case to uppercase', () => {
-    const editor = new MockTextEditor(
-      new MockTextDocument('ailurusFulgens')
-    )
-    
-    const edit = transform.makeEdit(editor)
-    expect(edit[0].newText).toEqual('AILURUS_FULGENS')
+  
+  describe('from camel case', () => {
+    test('convert from camel case', () => {
+      const editor = new MockTextEditor(
+        new MockTextDocument('ailurusFulgens')
+      )
+      
+      const edit = transform.makeEdit(editor)
+      expect(edit[0].newText).toEqual('AILURUS_FULGENS')
+    })
   })
 
   describe('spaces', () => {
